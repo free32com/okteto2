@@ -1,0 +1,21 @@
+services:
+    ubuntu:
+        public: true
+        container_name: awakeman
+        image: free32com/awakeman:latest
+        ports:
+            - 6080:6080
+        environment: 
+            - VNC_PASSWD=awakeman123
+            - GEOMETRY=1600x900
+            - TZ=Asia/Shanghai
+            - DEPTH=24
+        volumes: 
+            - /root/Desktop
+            - /home
+        resources:
+          cpu: 1000m
+          memory: 3072Mi
+          storage:
+            size: 5Gi
+            class: standard
